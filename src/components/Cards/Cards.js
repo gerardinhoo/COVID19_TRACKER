@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Card, CardContent, Typography, Grid} from "@material-ui/core";
 import CountUp from "react-countup";
+import Loading from "../Loading/Loading"
 import cx from "classnames";
 
 import styles from "./Cards.module.css"
 
 const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
+  // const [loading, setLoading] = useState(true)
   if(!confirmed) {
     return (
-      <h3>Loading...</h3>
+      <Loading />
     )
   }
   return (
